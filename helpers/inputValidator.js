@@ -25,8 +25,8 @@ exports.appointmentDataValidator = function(req, res, next) {
     if(typeof(name)!=='string') response.err = 'name should be a string';
     if(!isEmail(email)) response.err = 'email is invalid';
     if(!genders.includes(gender.toLowerCase())) response.err = 'gender can be M, F, Male or Female only';
-    const dobTimestamp = new Date(dateOfBirth).valueOf();
-    if(typeof(dobTimestamp)!=='number') response.err = 'date of birth should be of date type';
+    //const dobTimestamp = new Date(dateOfBirth).valueOf();
+    //if(typeof(dobTimestamp)!=='number') response.err = 'date of birth should be of date type';
     if(typeof(timeOfBirth)!=='string') response.err = 'time of birth should be a string in HH:MM or HH:MM am/pm format';
     if(typeof(placeOfBirth)!=='string') response.err = 'place of birth should be of type string';
     if(typeof(service)!=='string') response.err = 'service should be of type string';

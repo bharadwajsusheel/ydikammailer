@@ -24,3 +24,6 @@ app.use(cors());
 // APP ROUTES MIDDLEWARE
 const appointmentRouter = require('./routes/appointment');
 app.use('/api/', appointmentRouter);
+
+
+app.get('/', (req, res) => res.send({"msg":"hello"}) );
