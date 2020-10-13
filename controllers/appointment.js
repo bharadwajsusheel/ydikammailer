@@ -4,10 +4,12 @@ const sendMail = require('../helpers/sendMail');
 exports.bookAppointment = async function(req, res) {
     const response = {};
     const { email, name } = req.body;
+    /*
     const prev = await Booking.findOne({email});
     const prevDate = new Date(prev.createdAt).valueOf();
     const now = new Date().valueOf();
     const oneDay = 24*60*60*1000;
+    */
    /* if(now-prevDate<oneDay) {
         response.success=false;
         response.err = 'Active booking already exists';
