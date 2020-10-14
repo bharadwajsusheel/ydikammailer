@@ -24,7 +24,7 @@ exports.appointmentDataValidator = function(req, res, next) {
     if (!service) response.err = 'service is required';
     if (typeof(name) !== 'string') response.err = 'name should be a string';
     if (!isEmail(email)) response.err = 'email is invalid';
-    if (!genders.includes(gender)) response.err = 'gender can be M, F, Male or Female only';
+    if (!genders.includes(gender.toLowerCase())) response.err = 'gender can be M, F, Male or Female only';
     //const dobTimestamp = new Date(dateOfBirth).valueOf();
     //if(typeof(dobTimestamp)!=='number') response.err = 'date of birth should be of date type';
     if (typeof(timeOfBirth) !== 'string') response.err = 'time of birth should be a string in HH:MM or HH:MM am/pm format';
@@ -38,7 +38,7 @@ exports.appointmentDataValidator = function(req, res, next) {
 }
 
 function isEmail(email) {
-    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email))
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(email.toLowerCase()))
         return true;
     return false;
 }
