@@ -28,7 +28,7 @@ const bookingSchema = new mongoose.Schema({
     timeOfBirth: {
         type: String,
         trim: true,
-        required: false
+        required: true
     },
     placeOfBirth: {
         type: String,
