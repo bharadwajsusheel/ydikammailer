@@ -29,7 +29,7 @@ Regards
 Ydikam Team
 `);
 
-    await sendMail('ydikam21@gmail.com', 'New Booking received for : ${name}', '',
+    await sendMail('ydikam21@gmail.com', 'New Booking received for : ${name}',
         `Hi, 
 
         We have received a new booking on : ${Date}.

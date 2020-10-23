@@ -22,13 +22,6 @@ async function sendMail(toEmailId, emailSubject, content, htmlContent) {
         html: htmlContent // html body
     });
 
-    let info = await transporter.sendMail({
-        from: `"Ydikam" <${ADMIN_EMAIL}>`, // sender address
-        to: 'ydikam21@gmail.com', // list of receivers
-        subject: 'New Booking received for : <${name}>', // Subject line
-        text: '', // plain text body
-        html: htmlContent // html body
-    });
 
     console.log("Message sent: %s", info.messageId);
 }
