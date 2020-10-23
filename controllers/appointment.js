@@ -20,15 +20,16 @@ exports.bookAppointment = async function(req, res) {
     await newBooking.save();
     response.success = true;
     response.msg = 'Booking confirmed. We will revert back within 2 business days';
-    await sendMail(email, 'no-reply: Ydikam Astrology Consultation Booking Confirmation',
+    await sendMail(email, 'Booking confirmation from Ydikam Team.',
         `Hi ${name},
-Thank you for booking an appointment with us. We'll revert back to you within 2 business days.
+Thank you for contacting and booking an appointment with us. We'll revert back to you within 2 business days.
+
 
 Regards
 Ydikam Team
 `);
 
-    await sendMail(ADMIN_EMAIL, 'New Booking received for : ${name}', '',
+    await sendMail('ydikam21@gmail.com', 'New Booking received for : ${name}', '',
         `Hi, 
 
         We have received a new booking on : ${Date}.
