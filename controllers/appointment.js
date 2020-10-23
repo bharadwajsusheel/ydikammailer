@@ -4,7 +4,7 @@ const { ADMIN_EMAIL } = require('../config');
 
 exports.bookAppointment = async function(req, res) {
     const response = {};
-    const { email, name } = req.body;
+    const { email, name, mobile, gender, dateOfBirth, timeOfBirth, placeOfBirth, service, message } = req.body;
     /*
     const prev = await Booking.findOne({email});
     const prevDate = new Date(prev.createdAt).valueOf();
@@ -29,28 +29,71 @@ Regards
 Ydikam Team
 `);
 
-    await sendMail('ydikam21@gmail.com', 'New Booking received',
-        `Hi,
+    await sendMail('ydikam21@gmail.com', 'New Booking received', '', `Hi, 
+
+    We have received a new booking on : ${Date}.
+
+    Please find the below details.
+            
+    <!DOCTYPE html>
+    <html>
+    <head>
+    <style>
+    table, th, td {
+      border: 1px solid black;
+    }
+    </style>
+    </head>
+    <body>
     
-    New Booking received with below details. 
+    <h1>Booking Details</h1>
     
-    Name : ${name}
+    <table style="width:400px">
+      <tr>
+        <th>Contents</th>
+        <th>Details</th>
+      </tr>
+      <tr>
+        <td>Name</td>
+        <td>${name}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>${email}</td>
+      </tr>
+      <tr>
+        <td>Mobile</td>
+        <td>${mobile}</td>
+      </tr>
+      <tr>
+        <td>Gender</td>
+        <td>${gender}</td>
+      </tr>
+      <tr>
+        <td>Date Of Birth</td>
+        <td>${dateOfBirth}</td>
+      </tr>
+      <tr>
+        <td>Time Of Birth</td>
+        <td>${timeOfBirth}</td>
+      </tr>
+      <tr>
+        <td>Place Of Birth</td>
+        <td>${placeOfBirth}</td>
+      </tr>
+      <tr>
+        <td>Service Booked</td>
+        <td>${service}</td>
+      </tr>
+      <tr>
+        <td>Message</td>
+        <td>${message}</td>
+      </tr>
+    </table>
     
-    Email : ${email}
-    
-    Phone : ${mobile}
-    
-    Gender : ${gender}
-    
-    DOB : ${dateOfBirth}
-    
-    Time Of Birth : ${timeOfBirth}
-    
-    Place Of Birth : ${placeOfBirth}
-    
-    Service : ${service}
-    
-    Message : ${message}`);
+    </body>
+    </html>
+`);
     return res.status(200).json(response);
     console.log(response)
 }
