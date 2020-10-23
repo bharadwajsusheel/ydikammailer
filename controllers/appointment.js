@@ -5,6 +5,7 @@ const { ADMIN_EMAIL } = require('../config');
 exports.bookAppointment = async function(req, res) {
     const response = {};
     const { email, name, mobile, gender, dateOfBirth, timeOfBirth, placeOfBirth, service, message } = req.body;
+
     /*
     const prev = await Booking.findOne({email});
     const prevDate = new Date(prev.createdAt).valueOf();
@@ -31,7 +32,7 @@ Ydikam Team
 
     await sendMail('ydikam21@gmail.com', 'New Booking received', '', `Hi, 
 
-    We have received a new booking on : ${Date}.
+    We have received a new booking.
 
     Please find the below details.
             
