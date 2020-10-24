@@ -20,17 +20,35 @@ exports.bookAppointment = async function(req, res) {
     const newBooking = new Booking(req.body);
     await newBooking.save();
     response.success = true;
-    response.msg = 'Booking confirmed. We will revert back within 2 business days';
-    await sendMail(email, 'Booking confirmation from Ydikam Team.',
-        `Hi ${name},
+    if (service == 'Query from contact page') {
+        response.msg = 'We have heard you.';
+        await sendMail(email, 'We have heard you.',
+            `Hi ${name},    
+Greetings from Ydikam Team,
+
+Thank you for getting in touch with us, we would get back to you as soon as possible. 
+
+
+ 
+                                        SHIVANUGRAHA PRAPTHIRASTHU!!
+
+Regards
+Ydikam Team
+`);
+    } else {
+        response.msg = 'Booking confirmed. We will revert back within 2 business days';
+        await sendMail(email, 'Booking confirmation from Ydikam Team.',
+            `Hi ${name},    
 Thank you for contacting and booking an appointment with us. We'll revert back to you within 2 business days.
 
+ 
+                                        SHIVANUGRAHA PRAPTHIRASTHU!!
 
 Regards
 Ydikam Team
 `);
 
-    await sendMail('ydikam21@gmail.com', 'New Booking received', '', `Hi, 
+        await sendMail('ydikam21@gmail.com', 'New Booking received', '', `Hi, 
 
     We have received a new booking.
 
@@ -95,6 +113,7 @@ Ydikam Team
     </body>
     </html>
 `);
-    return res.status(200).json(response);
-    console.log(response)
+        return res.status(200).json(response);
+        console.log(response)
+    }
 }
