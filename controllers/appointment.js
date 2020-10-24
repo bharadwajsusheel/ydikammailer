@@ -23,7 +23,7 @@ exports.bookAppointment = async function(req, res) {
     if (service == 'Query from contact page') {
         response.msg = 'We have heard you.';
         await sendMail(email, 'We have heard you.',
-            `Hi ${name},    
+            `Hi ${name},   \n\n 
 Greetings from Ydikam Team,
 
 Thank you for getting in touch with us, we would get back to you as soon as possible. 
@@ -48,7 +48,8 @@ Regards
 Ydikam Team
 `);
 
-        await sendMail('ydikam21@gmail.com', 'New Booking received', '', `Hi, 
+    }
+    await sendMail('ydikam21@gmail.com', 'New Booking received', '', `Hi, 
 
     We have received a new booking.
 
@@ -113,7 +114,8 @@ Ydikam Team
     </body>
     </html>
 `);
-        return res.status(200).json(response);
-        console.log(response)
-    }
+    return res.status(200).json(response);
+    console.log(response)
+
+
 }
