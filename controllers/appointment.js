@@ -30,7 +30,7 @@ Thank you for getting in touch with us, we would get back to you as soon as poss
 
 
  
-                                        SHIVANUGRAHA PRAPTHIRASTHU!!
+SHIVANUGRAHA PRAPTHIRASTHU!!
 
 Regards
 Ydikam Team
@@ -42,7 +42,7 @@ Ydikam Team
 Thank you for contacting and booking an appointment with us. We'll revert back to you within 2 business days.
 
  
-                                        SHIVANUGRAHA PRAPTHIRASTHU!!
+SHIVANUGRAHA PRAPTHIRASTHU!!
 
 Regards
 Ydikam Team
