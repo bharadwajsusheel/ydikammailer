@@ -39,7 +39,7 @@ Ydikam Team
         response.msg = 'Booking confirmed. We will revert back within 2 business days';
         await sendMail(email, 'Booking confirmation from Ydikam Team.',
             `Hi ${name},    
-Thank you for contacting and booking an appointment with us for the ${service}. We'll revert back to you within 2 business days.
+Thank you for contacting and booking an appointment with us for ${service}. We'll revert back to you within 2 business days.
 
  
 SHIVANUGRAHA PRAPTHIRASTHU!!
