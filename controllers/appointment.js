@@ -4,7 +4,7 @@ const { ADMIN_EMAIL } = require('../config');
 
 exports.bookAppointment = async function(req, res) {
     const response = {};
-    const { email, name, mobile, gender, dateOfBirth, timeOfBirth, placeOfBirth, service, message } = req.body;
+    const { email, name, mobile, gender, dateOfBirth, timeOfBirth, placeOfBirth, service, consultation, message } = req.body;
 
     /*
     const prev = await Booking.findOne({email});
@@ -105,6 +105,10 @@ Ydikam Team
         <td>Service Booked</td>
         <td>${service}</td>
       </tr>
+      <tr>
+      <td>Consultation Type</td>
+      <td>${consultation}</td>
+    </tr>
       <tr>
         <td>Message</td>
         <td>${message}</td>
