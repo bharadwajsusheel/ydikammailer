@@ -8,7 +8,7 @@ function dbConnect(DB_URL) {
         useFindAndModify: false,
         autoIndex: false
     };
-    mongoose.connect("mongodb+srv://admin:admin@1234@cluster0.an6w8.mongodb.net/ydikam", connectionOptions)
+    mongoose.connect(DB_URL, connectionOptions)
         .then(() => console.log('Connected to DB...'))
         .catch(err => console.log(`DB Connection Error: ${err}`));
 }

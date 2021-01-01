@@ -35,9 +35,7 @@ SHIVANUGRAHA PRAPTHIRASTHU!!
 Regards
 Ydikam Team
 `);
-    } else if (service == "reviews") {
-
-    } {
+    } else {
         response.msg = 'Booking confirmed. We will revert back within 2 business days';
         await sendMail(email, 'Booking confirmation from Ydikam Team.',
             `Hi ${name},    

@@ -6,7 +6,7 @@ const { PORT, DB_URL } = require('./config');
 
 // SERVER SETUP
 const app = express();
-app.listen("5000", err => {
+app.listen(PORT, err => {
     if (err)
         console.log(`Server Connection Error: ${err}`);
     else
