@@ -8,8 +8,8 @@ async function sendMail(toEmailId, emailSubject, content, htmlContent) {
         port: 465,
         secure: true, // true for 465, false for other ports
         auth: {
-            user: ADMIN_EMAIL, // generated ethereal user
-            pass: ADMIN_PASSWORD, // generated ethereal password
+            user: "ydikam21@gmail.com", // generated ethereal user
+            pass: "Pinaki@m00la", // generated ethereal password
         },
     });
 
