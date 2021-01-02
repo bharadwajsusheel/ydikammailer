@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+require('dotenv').config({ path: __dirname + '/.env' });
 
 function dbConnect(DB_URL) {
     const connectionOptions = {
